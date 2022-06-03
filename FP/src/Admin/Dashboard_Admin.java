@@ -6,6 +6,7 @@
 package Admin;
 
 import Controller.Connector;
+import Model.Login;
 import Model.Model;
 import javax.swing.JFrame;
 import java.sql.PreparedStatement;
@@ -38,9 +39,10 @@ public class Dashboard_Admin extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        show = new javax.swing.JButton();
         delete = new javax.swing.JButton();
         backs = new javax.swing.JButton();
+        update = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,10 +59,10 @@ public class Dashboard_Admin extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table);
 
-        jButton1.setText("Show");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        show.setText("Show");
+        show.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                showActionPerformed(evt);
             }
         });
 
@@ -78,6 +80,13 @@ public class Dashboard_Admin extends javax.swing.JFrame {
             }
         });
 
+        update.setText("Update");
+        update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,9 +96,10 @@ public class Dashboard_Admin extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(show, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backs, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(backs, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46))
         );
         layout.setVerticalGroup(
@@ -100,9 +110,11 @@ public class Dashboard_Admin extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(jButton1)
+                .addComponent(show)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(delete)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(update)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(backs)
                 .addGap(38, 38, 38))
@@ -111,18 +123,18 @@ public class Dashboard_Admin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
         // TODO add your handling code here:
         Model md = new Model();
         md.table(this);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_showActionPerformed
 
     private void backsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backsActionPerformed
-            adminMenu am = new adminMenu();
-            am.setVisible(true);
-            am.pack();
-            am.setLocationRelativeTo(null);
-            am.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            Login log = new Login();
+            log.setVisible(true);
+            log.pack();
+            log.setLocationRelativeTo(null);
+            log.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             this.dispose();
     }//GEN-LAST:event_backsActionPerformed
 
@@ -156,6 +168,10 @@ public class Dashboard_Admin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_deleteActionPerformed
 
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+        
+    }//GEN-LAST:event_updateActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -164,8 +180,9 @@ public class Dashboard_Admin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backs;
     private javax.swing.JButton delete;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton show;
     public static javax.swing.JTable table;
+    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

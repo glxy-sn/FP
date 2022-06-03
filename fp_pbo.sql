@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 30, 2022 at 04:27 PM
+-- Generation Time: Jun 03, 2022 at 07:39 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.28
 
@@ -24,6 +24,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `data_login`
+--
+
+CREATE TABLE `data_login` (
+  `name` varchar(255) NOT NULL,
+  `id` varchar(255) NOT NULL,
+  `pass` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_login`
+--
+
+INSERT INTO `data_login` (`name`, `id`, `pass`) VALUES
+('Admin', '1232000', '12345');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `data_user`
 --
 
@@ -35,13 +54,25 @@ CREATE TABLE `data_user` (
   `age` int(3) NOT NULL,
   `complaints` varchar(255) NOT NULL,
   `apt_date` date NOT NULL,
-  `apt_time` varchar(40) NOT NULL,
-  `medName` varchar(255) NOT NULL,
-  `percent` int(11) NOT NULL,
-  `dose` int(11) NOT NULL,
-  `usage` int(11) NOT NULL,
-  `PriceMed` int(11) NOT NULL
+  `apt_time` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_user`
+--
+
+INSERT INTO `data_user` (`name`, `BPJS`, `phone`, `gender`, `age`, `complaints`, `apt_date`, `apt_time`) VALUES
+('esfwe', '21431', '321523', 'Male', 21, 'Early Childhood Psychologist', '2022-06-11', '1.00 PM');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `data_login`
+--
+ALTER TABLE `data_login`
+  ADD PRIMARY KEY (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

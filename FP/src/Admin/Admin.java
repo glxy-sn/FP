@@ -150,7 +150,7 @@ public class Admin extends javax.swing.JFrame {
             rs = ps.executeQuery();
             if (rs.next()){
                 JOptionPane.showMessageDialog(null, "Login Success");
-                adminMenu am = new adminMenu();
+                    Dashboard_Admin am = new Dashboard_Admin();
                 am.setVisible(true);
                 am.pack();
                 am.setLocationRelativeTo(null);

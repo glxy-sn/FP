@@ -374,17 +374,17 @@ public class Guest extends javax.swing.JFrame {
             apptime = "6.00 PM";
         }
         
+        if (appoinmentDate.getDate() != null){
+                SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
+                appoinment = dateformat.format(appoinmentDate.getDate());
+        }
+        
         
         
         if (name.equals("")||no.equals("")||hp.equals("")||JK.equals("[blank]")||old.equals("")||complaints.equals("[blank]")||apptime == null||appoinment == null){
-            JOptionPane.showMessageDialog(null, "Data can not be empty");
+            JOptionPane.showMessageDialog(null,"Data can not be empty");
             hapusLayar();
         }else{
-            if (appoinmentDate.getDate() != null){
-                SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
-                appoinment = dateformat.format(appoinmentDate.getDate());
-            }
-        
             PreparedStatement ps;
             String query = "INSERT INTO `data_user`(`name`, `BPJS`, `phone`, `gender`, `age`, `complaints`, `apt_date`, `apt_time`) VALUES (?,?,?,?,?,?,?,?)";
 
